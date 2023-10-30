@@ -17,7 +17,7 @@ public class ZooManagementt
 ```
 Rq : impossible d'invoquer une variable non statique dans un contexte statique (main)
 
-###Solution 1:
+### Solution 1:
 ```
 public class ZooManagementt
 {
@@ -30,7 +30,7 @@ public class ZooManagementt
 }
 ```
 
-###Solution 2:
+### Solution 2:
 ```
 public class ZooManagementt
 {
@@ -43,7 +43,7 @@ public class ZooManagementt
 }
 ```
 
-##Instruction 2-3:
+## Instruction 2-3:
 ```
 import java.util.Scanner;
 public class ZooManagementt{

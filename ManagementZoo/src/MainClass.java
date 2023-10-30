@@ -19,5 +19,7 @@ public class MainClass {
         Zoo myZoo = new Zoo("Mon Zoo", "VilleZoo", 10);
         Animal lion = new Animal("Félin", "Lion", 5, true);
         myZoo.displayZoo();
+        System.out.println(myZoo);
+        System.out.println(myZoo.toString());
     }
 }

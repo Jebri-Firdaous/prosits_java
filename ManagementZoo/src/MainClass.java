@@ -18,5 +18,6 @@ public class MainClass {
         */
         Zoo myZoo = new Zoo("Mon Zoo", "VilleZoo", 10);
         Animal lion = new Animal("Félin", "Lion", 5, true);
+        myZoo.displayZoo();
     }
 }

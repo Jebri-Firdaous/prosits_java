@@ -10,4 +10,8 @@ public class Zoo {
         this.city = city;
         this.nbrCages = nbrCages;
     }
+    public void displayZoo()
+    {
+        System.out.println("nom: "+this.name+" | cité: "+this.city+" | nombre de cages: "+this.nbrCages);
+    }
 }

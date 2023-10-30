@@ -18,6 +18,7 @@ public class ZooManagementt
 Rq : impossible d'invoquer une variable non statique dans un contexte statique (main)
 
 ###Solution 1:
+```
 public class ZooManagementt
 {
     static int nbrCages = 20;
@@ -27,8 +28,10 @@ public class ZooManagementt
         System.out.println(zooName+" comporte "+nbrCages+" cages.");
     }
 }
+```
 
 ###Solution 2:
+```
 public class ZooManagementt
 {
     public static void main(String[] esprit)
@@ -38,8 +41,10 @@ public class ZooManagementt
         System.out.println(zooName+" comporte "+nbrCages+" cages.");
     }
 }
+```
 
 ##Instruction 2-3:
+```
 import java.util.Scanner;
 public class ZooManagementt{
     public static void main(String[] args)
@@ -54,6 +59,7 @@ public class ZooManagementt{
         sc.close();
     }
 }
+```
 
 
 

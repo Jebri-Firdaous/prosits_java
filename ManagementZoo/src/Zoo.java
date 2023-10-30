@@ -5,6 +5,7 @@ public class Zoo {
     final int NB_CAGES = 25;
     int nbAnimaux;
     int nbrCages;
+    int nbTotal;
     public Zoo() {}
     public Zoo(String name, String city,int nbrCages) {
         this.animals = new Animal[NB_CAGES]; // Initialisation du tableau d'animaux avec une taille maximale de 25
@@ -16,21 +17,36 @@ public class Zoo {
     }
     public void displayZoo()
     {
-        System.out.println("Zoo: " + name + ", cité: " + city+", nombre d'animaux: "+nbAnimaux);
+        System.out.println("Zoo: " + name + ", cité: " + city+", nombre d'animaux: "+nbAnimaux+", nombre de cages: "+nbrCages);
     }
     @Override
     public String toString() {
-        return "Zoo: " + name + ", cité: " + city+",Nombre de cages" + nbrCages;
+        return "Zoo: " + name + ", cité: " + city+", Nombre de cages" + nbrCages;
     }
     public boolean addAnimal(Animal animal) {
-        if (nbAnimaux < nbrCages) {
-            animals[nbAnimaux] = animal;
-            nbAnimaux++;
-            return true;
+
+        if (searchAnimal(animal) == -1) {
+            if (isZooFull()==false) {
+                animals[nbAnimaux] = animal;
+                nbAnimaux++;
+                nbTotal++;
+                return true;
+            } else {
+                System.out.println("Nombre maximal");
+                return false;
+            }
         } else {
-            System.out.println("Le zoo est plein. Impossible d'ajouter plus d'animaux.");
+            System.out.println("Animal existe déjà");
             return false;
         }
+    }
+    public boolean isZooFull(){
+    /*    if(nbAnimaux < NB_CAGES)
+            return false;
+        return true;
+
+     */
+        return (nbAnimaux == NB_CAGES);
     }
     public void displayAnimalZoo(){
         for(int i=0;i<NB_CAGES;i++){
@@ -40,5 +56,28 @@ public class Zoo {
             }
         }
 
+    }
+    public int searchAnimal(Animal animal) {
+
+        for (int i=0;i<nbrCages;i++)
+        {
+            if (animals[i]!=null && animals[i].name==animal.name)
+                return i;
         }
+
+        return -1;
+    }
+    public boolean removeAnimal(Animal animal){
+        int pos = searchAnimal(animal);
+        if(pos != -1){
+            for(int j=pos; j<nbAnimaux-1 ; j++){
+                animals[j] = animals[j+1];
+            }
+            nbAnimaux--;
+            animals[nbAnimaux]=null;
+            System.out.println("delete avec succes");
+            return true;
+        }
+        return false;
+    }
 }

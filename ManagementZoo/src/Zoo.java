@@ -4,11 +4,13 @@ public class Zoo {
     String city;
     final int NB_CAGES = 25;
     int nbAnimaux;
+    int nbrCages;
     public Zoo() {}
-    public Zoo(String name, String city) {
+    public Zoo(String name, String city,int nbrCages) {
         this.animals = new Animal[NB_CAGES]; // Initialisation du tableau d'animaux avec une taille maximale de 25
         this.name = name;
         this.city = city;
+        this.nbrCages=nbrCages;
         this.nbAnimaux = 0;
 
     }
@@ -18,10 +20,10 @@ public class Zoo {
     }
     @Override
     public String toString() {
-        return "Zoo: " + name + ", cité: " + city;
+        return "Zoo: " + name + ", cité: " + city+",Nombre de cages" + nbrCages;
     }
     public boolean addAnimal(Animal animal) {
-        if (nbAnimaux < NB_CAGES) {
+        if (nbAnimaux < nbrCages) {
             animals[nbAnimaux] = animal;
             nbAnimaux++;
             return true;
@@ -30,4 +32,13 @@ public class Zoo {
             return false;
         }
     }
+    public void displayAnimalZoo(){
+        for(int i=0;i<NB_CAGES;i++){
+            if (animals[i]!=null)
+            {
+                System.out.println("animal["+i+"]=Family: "+animals[i].family+" ,name:"+animals[i].name+", age:"+animals[i].age+" ,isMammal:"+animals[i].isMammal);
+            }
+        }
+
+        }
 }

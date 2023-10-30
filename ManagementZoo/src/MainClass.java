@@ -14,10 +14,10 @@ public class MainClass {
         myZoo.name = "Mon Zoo";
         myZoo.city = "VilleZoo";
         */
-        Zoo myZoo = new Zoo("Belvidere", "Tunis");
+        Zoo myZoo = new Zoo("Belvidere", "Tunis",6);
         Animal lion = new Animal("Félin", "Lion", 5, true);
         Animal chat = new Animal("Carnivore","Chat",2,true);
-        Animal elephant = new Animal("Elephantidae", "Elephant", 10, true);
+        Animal elephant = new Animal("Elephant", "Elephant", 10, true);
         Animal giraffe = new Animal("Giraffidae", "Giraffe", 8, true);
         myZoo.addAnimal(lion);
         myZoo.addAnimal(chat);
@@ -25,6 +25,7 @@ public class MainClass {
         myZoo.addAnimal(giraffe);
 
         myZoo.displayZoo();
+        myZoo.displayAnimalZoo();
         //System.out.println(myZoo);
         //System.out.println(myZoo.toString());
     }

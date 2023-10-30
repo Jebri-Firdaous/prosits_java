@@ -3,6 +3,7 @@ public class Animal {
     String name;
     int age;
     boolean isMammal;
+
     public Animal() {}
     public Animal(String family, String name, int age, boolean isMammal) {
         this.family = family;
@@ -10,4 +11,10 @@ public class Animal {
         this.age = age;
         this.isMammal = isMammal;
     }
+    @Override
+    public String toString() {
+        return "Family:"+family+" ,name:"+name+", age:"+age+", isMammal:"+isMammal;
+    }
+
+
 }

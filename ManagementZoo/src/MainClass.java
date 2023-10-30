@@ -13,13 +13,19 @@ public class MainClass {
         Zoo myZoo = new Zoo();
         myZoo.name = "Mon Zoo";
         myZoo.city = "VilleZoo";
-        myZoo.nbrCages = 10;
-        myZoo.animals = new Animal[25];
         */
-        Zoo myZoo = new Zoo("Mon Zoo", "VilleZoo", 10);
+        Zoo myZoo = new Zoo("Belvidere", "Tunis");
         Animal lion = new Animal("Félin", "Lion", 5, true);
+        Animal chat = new Animal("Carnivore","Chat",2,true);
+        Animal elephant = new Animal("Elephantidae", "Elephant", 10, true);
+        Animal giraffe = new Animal("Giraffidae", "Giraffe", 8, true);
+        myZoo.addAnimal(lion);
+        myZoo.addAnimal(chat);
+        myZoo.addAnimal(elephant);
+        myZoo.addAnimal(giraffe);
+
         myZoo.displayZoo();
-        System.out.println(myZoo);
-        System.out.println(myZoo.toString());
+        //System.out.println(myZoo);
+        //System.out.println(myZoo.toString());
     }
 }

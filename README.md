@@ -3,7 +3,8 @@ les prosits java
 # PROSIT 1
 
 ## Instruction 1:
-`public class ZooManagementt
+```
+public class ZooManagementt
 {
     int nbrCages = 20;
     String zooName ="my zoo";
@@ -12,11 +13,12 @@ les prosits java
         System.out.println(zooName+" comporte "+nbrCages+" cages.");
         //erreur ici : var(zooName/nbrCages)
     }
-}`
+}
+```
 Rq : impossible d'invoquer une variable non statique dans un contexte statique (main)
 
 ###Solution 1:
-`public class ZooManagementt
+public class ZooManagementt
 {
     static int nbrCages = 20;
     static String zooName ="my zoo";
@@ -24,10 +26,10 @@ Rq : impossible d'invoquer une variable non statique dans un contexte statique (
     {
         System.out.println(zooName+" comporte "+nbrCages+" cages.");
     }
-}`
+}
 
 ###Solution 2:
-`public class ZooManagementt
+public class ZooManagementt
 {
     public static void main(String[] esprit)
     {
@@ -35,10 +37,10 @@ Rq : impossible d'invoquer une variable non statique dans un contexte statique (
         String zooName ="my zoo";
         System.out.println(zooName+" comporte "+nbrCages+" cages.");
     }
-}`
+}
 
 ##Instruction 2-3:
-`import java.util.Scanner;
+import java.util.Scanner;
 public class ZooManagementt{
     public static void main(String[] args)
     {
@@ -52,7 +54,7 @@ public class ZooManagementt{
         sc.close();
     }
 }
-`
+
 
 
 

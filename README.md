@@ -140,8 +140,9 @@ Ces erreurs se produisent parce que la classe Animal et la classe Zoo ont désor
 Lorsque des constructeurs paramétrés sont définis dans une classe, le constructeur par défaut n'est plus généré automatiquement.
 Dans la méthode main, les objets Animal et Zoo sont créés sans utiliser les nouveaux constructeurs paramétrés, ce qui provoque ces erreurs.
 
-Instruction 7 :
-Résolvez le problème précédent  
+## Instruction 7 :
+Résolvez le problème précédent 
+```
 public class Zoo {
     Animal[] animals;
     String name;
@@ -169,7 +170,9 @@ public class Animal {
         this.isMammal = isMammal;
     }
 }
+```
 Créez des animaux avec le constructeur paramétré.
+```
 public class MainClass {
     public  static void main(String[] args)
     {
@@ -179,17 +182,19 @@ public class MainClass {
         Animal giraffe = new Animal("Giraffidae", "Giraffe", 8, true);
     }
 }
+```
 
-Instruction 8 :
+## Instruction 8 :
 Création de la méthode “displayZoo ()” dans la classe Zoo et son invocation dans la méthode “main” pour le zoo que vous avez créé.
 Classe Zoo :
+```
 public void displayZoo()
 {
     System.out.println("Zoo: " + name + ", cité: " + city+", nombre de cages: "+nbrCages);
 }
-
-
+```
 Classe Principale :
+```
 public class MainClass {
     public  static void main(String[] args)
     {
@@ -199,9 +204,10 @@ public class MainClass {
         myZoo.DisplayZoo();
     }
 }
-
- 
+```
+![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/2cb65f49-291a-44f1-8c67-ada9a69965e2)
 Essayez de directement afficher le zoo via ces deux instructions :
+```
 public class MainClass {
     public  static void main(String[] args)
     {
@@ -212,12 +218,13 @@ public class MainClass {
         System.out.println(myZoo);
         System.out.println(myZoo.toString());
     }
-
- 
+```
+ ![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/6c0e2095-e67f-4480-9312-af506b3955ed)
 Lorsque on essaye d'afficher le zoo directement avec System.out.println(myZoo) ou System.out.println(myZoo.toString()), on remarquera que le résultat est différent de l'invocation de displayZoo (). 
 Lorsque on utilise System.out.println(myZoo), cela utilise la méthode toString () par défaut de la classe Object, qui renverra une représentation de l'objet au format "nomDeLaClasse@adresseMémoire".
 
-Instruction 9 :
+## Instruction 9 :
+```
 public class Animal {
     …
     @Override
@@ -231,8 +238,10 @@ public class Zoo {
     public String toString() {
      return "Zoo: " + name + ", cité: " + city+" ,Nombre de cages" + nbrCages;
     }
+```
 
-Instruction 10 :
+## Instruction 10 :
+```
 public class Zoo {
     …
     int nbAnimaux;
@@ -260,7 +269,9 @@ public class Zoo {
     }
 }
 }
+```
 Classe Principale
+```
 public class MainClass {
     public  static void main(String[] args)
     {
@@ -274,21 +285,18 @@ public class MainClass {
         myZoo.addAnimal(chat);
         myZoo.addAnimal(elephant);
         myZoo.addAnimal(giraffe);
-
-
         myZoo.displayZoo();
         …
     }
 }
-
- 
-
+```
 Dans cet exemple, le zoo a une capacité de 2 cages. Le lion et le chat sont ajoutés avec succès car le zoo a des cages disponibles. Cependant, lorsque vous essayez d'ajouter un éléphant et une girafe, la méthode addAnimal() retourne false pour indiquer que le zoo est plein et qu'aucun autre animal ne peut être ajouté.
 
 
 
-Instruction 11 :
+## Instruction 11 :
 Ajout d’une méthode qui affiche les animaux d’un zoo dans la classe Zoo 
+```
 public void displayAnimalZoo(){
     for(int i=0;i<NB_CAGES;i++){
         if (animals[i]!=null)
@@ -297,9 +305,9 @@ public void displayAnimalZoo(){
         }
     }
 }
-
-
+```
 Classe principale.
+```
 public class MainClass {
     public  static void main(String[] args)
     {
@@ -319,7 +327,8 @@ public class MainClass {
         //System.out.println(myZoo.toString());
     }
 }
-
+```
+```
 public class Zoo {
     …
     public int searchAnimal(Animal animal) {
@@ -353,10 +362,12 @@ public class MainClass {
         } else {
             System.out.println("L'animal n'a pas été trouvé dans le zoo.");
         }
-      …  }}
-
- 
-
+      …
+}
+}
+ ```
+![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/063482d8-ceb8-4f7c-9507-c28b21b8b140)
+```
 public class MainClass {
     public  static void main(String[] args)
     {
@@ -386,14 +397,13 @@ public class MainClass {
         …
     }
 }
-
- 
+```
+ ![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/b5c0ba3a-a2a0-4454-80c9-07f5aa140a9b)
 Lorsque on crée un autre animal identique au premier et que vous le cherchez dans le zoo en utilisant la méthode searchAnimal(), on constate que la méthode retournera l'indice du premier animal trouvé qui correspond au critère de recherche (dans ce cas, le nom de l'animal). Cela signifie que la méthode searchAnimal() ne distingue pas entre deux animaux ayant les mêmes attributs.
  Elle retournera simplement le premier animal trouvé qui correspond au critère de recherche.
 
-
-
-Instruction 12 :
+## Instruction 12 :
+```
 public class Zoo {
     …
     int nbTotal;
@@ -434,8 +444,10 @@ public class Zoo {
         return -1;
     }
 }
+```
 
-Instruction 13 :
+## Instruction 13 :
+```
 public boolean removeAnimal(Animal animal){
     int pos = searchAnimal(animal);
     if(pos != -1){
@@ -449,8 +461,9 @@ public boolean removeAnimal(Animal animal){
     }
     return false;
 }
+```
+ ![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/dee35d50-e943-4785-a148-154d22379182)
 
- 
 
 
 

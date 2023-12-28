@@ -222,7 +222,6 @@ public class MainClass {
     }
 }
 ```
-![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/2cb65f49-291a-44f1-8c67-ada9a69965e2)
 
 Essayez de directement afficher le zoo via ces deux instructions :
 ```
@@ -237,7 +236,6 @@ public class MainClass {
         System.out.println(myZoo.toString());
     }
 ```
- ![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/6c0e2095-e67f-4480-9312-af506b3955ed)
  
 Lorsque on essaye d'afficher le zoo directement avec System.out.println(myZoo) ou System.out.println(myZoo.toString()), on remarquera que le résultat est différent de l'invocation de displayZoo (). 
 Lorsque on utilise System.out.println(myZoo), cela utilise la méthode toString () par défaut de la classe Object, qui renverra une représentation de l'objet au format "nomDeLaClasse@adresseMémoire".
@@ -380,7 +378,6 @@ public class MainClass {
 }
 }
  ```
-![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/7a77d13f-a971-4f31-9d98-8e3c240d2086)
 
 ```
 public class MainClass {
@@ -413,7 +410,6 @@ public class MainClass {
     }
 }
 ```
-![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/a63e1a9d-312b-4669-828b-f2255af5ee42)
 
  
 Lorsque on crée un autre animal identique au premier et que vous le cherchez dans le zoo en utilisant la méthode searchAnimal(), on constate que la méthode retournera l'indice du premier animal trouvé qui correspond au critère de recherche (dans ce cas, le nom de l'animal). Cela signifie que la méthode searchAnimal() ne distingue pas entre deux animaux ayant les mêmes attributs.

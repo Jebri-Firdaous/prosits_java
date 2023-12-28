@@ -148,7 +148,6 @@ public class Zoo {
     }
 }
 ```
-![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/5d53f373-b216-417c-9cdd-7f0581453807)
 
 Erreurs dans la classe main :
  

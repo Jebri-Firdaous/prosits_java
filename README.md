@@ -272,21 +272,22 @@ public class Zoo {
     }
     public void displayZoo()
     {
-    System.out.println("Zoo: " + name + ", cité: " + city+", nombre d'animaux: 
-    "+nbAnimaux+", nombre de cages: "+nbrCages);
+    System.out.println("Zoo: " + name + ", cité: " + city+", nombre de cages: "+nbrCages);
     }
  
     …
-    public boolean addAnimal(Animal animal) {
-    if (nbAnimaux < nbrCages) {
-        animals[nbAnimaux] = animal;
-        nbAnimaux++;
-        return true;
-    } else {
-        System.out.println("Le zoo est plein. Impossible d'ajouter plus d'animaux.");
-        return false;
-    }
-}
+     public boolean addAnimal(Animal animal)
+     {
+          if (nbAnimaux<nbrCages)
+          {
+               animals[nbAnimaux]= animal;
+               nbAnimaux++;
+               System.out.println("Inseré");
+               return true;
+          }
+          System.out.println("Le zoo est plein. Impossible d'ajouter plus d'animaux.");
+          return false;
+     }
 }
 ```
 Classe Principale
@@ -316,7 +317,7 @@ Dans cet exemple, le zoo a une capacité de 2 cages. Le lion et le chat sont ajo
 ## Instruction 11 :
 Ajout d’une méthode qui affiche les animaux d’un zoo dans la classe Zoo 
 ```
-public void displayAnimalZoo(){
+<=public void displayAnimalZoo(){
     for(int i=0;i<NB_CAGES;i++){
         if (animals[i]!=null)
         {
@@ -362,30 +363,24 @@ public class Zoo {
 
 public class MainClass {
     public  static void main(String[] args)
-    {  …
-        Zoo myZoo = new Zoo("Belvidere", "Tunis",6);
-        Animal lion = new Animal("Félin", "Lion", 5, true);
-        Animal chat = new Animal("Carnivore","Chat",2,true);
-        Animal elephant = new Animal("Elephant", "Elephant", 10, true);
-        Animal giraffe = new Animal("Giraffidae", "Giraffe", 8, true);
-        Animal chat_n = new Animal("Carnivore","Chat_n",2,true);
+    {Zoo myZoo =new Zoo("Belvidere","Tunis",8);
+        Animal lion =new Animal("Carnivor", "Symba",10,true);
+        Animal lion1 =new Animal("Carnivor", "Symba",10,true);
+        Animal chat = new Animal("Carnivore","Tom",2,true);
+        Animal elephant = new Animal("Herbivor", "Babar", 10, true);
+        Animal giraffe = new Animal("Herbivore", "Melman", 8, true);
+        System.out.println(myZoo);
         myZoo.addAnimal(lion);
         myZoo.addAnimal(chat);
-        myZoo.addAnimal(elephant);
         myZoo.addAnimal(giraffe);
-       myZoo.displayZoo();
-        myZoo.displayAnimalZoo();
-        int search= myZoo.searchAnimal(chat_n);
-        if (search != -1) {
-            System.out.println("L'animal a été trouvé à l'indice : " + search);
-        } else {
-            System.out.println("L'animal n'a pas été trouvé dans le zoo.");
-        }
-      …
+        myZoo.addAnimal(elephant);
+        myZoo.addAnimal(lion1);
+        myZoo.afficheAnimalZoo();
+        
 }
 }
  ```
-![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/063482d8-ceb8-4f7c-9507-c28b21b8b140)
+![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/7a77d13f-a971-4f31-9d98-8e3c240d2086)
 
 ```
 public class MainClass {
@@ -418,7 +413,8 @@ public class MainClass {
     }
 }
 ```
- ![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/b5c0ba3a-a2a0-4454-80c9-07f5aa140a9b)
+![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/a63e1a9d-312b-4669-828b-f2255af5ee42)
+
  
 Lorsque on crée un autre animal identique au premier et que vous le cherchez dans le zoo en utilisant la méthode searchAnimal(), on constate que la méthode retournera l'indice du premier animal trouvé qui correspond au critère de recherche (dans ce cas, le nom de l'animal). Cela signifie que la méthode searchAnimal() ne distingue pas entre deux animaux ayant les mêmes attributs.
  Elle retournera simplement le premier animal trouvé qui correspond au critère de recherche.
@@ -469,22 +465,22 @@ public class Zoo {
 
 ## Instruction 13 :
 ```
-public boolean removeAnimal(Animal animal){
-    int pos = searchAnimal(animal);
-    if(pos != -1){
-        for(int j=pos; j<nbAnimaux-1 ; j++){
-            animals[j] = animals[j+1];
-        }
-        nbAnimaux--;
-        animals[nbAnimaux]=null;
-        System.out.println("delete avec succes");
-        return true;
-    }
-    return false;
-}
-```
- ![image](https://github.com/Jebri-Firdaous/prosits_java/assets/56646201/dee35d50-e943-4785-a148-154d22379182)
- 
+public  boolean removeAnimal(Animal animal)
+     {
+         int pos = searchAnimal(animal);
+         if (pos!=-1)
+         {
+              for (int i=pos;i<=nbAnimaux-1; i++)
+              {
+                   animals[i]=animals[i+1];
+              }
+              nbAnimaux--;
+              animals[nbAnimaux]=null;
+              return true;
+         }
+          return false;
+     }
+``` 
 
 
 

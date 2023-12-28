@@ -314,7 +314,7 @@ Dans cet exemple, le zoo a une capacité de 2 cages. Le lion et le chat sont ajo
 ## Instruction 11 :
 Ajout d’une méthode qui affiche les animaux d’un zoo dans la classe Zoo 
 ```
-<=public void displayAnimalZoo(){
+public void displayAnimalZoo(){
     for(int i=0;i<NB_CAGES;i++){
         if (animals[i]!=null)
         {

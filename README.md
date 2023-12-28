@@ -56,7 +56,7 @@ public class ZooManagementt{
         System.out.println("Saisir le nom de Zoo: ");
         String zooName=sc.next();
         System.out.println(zooName+" comporte "+nbrCages+" cages.");
-        sc.close();
+        
     }
 }
 ```
@@ -89,16 +89,20 @@ public class MainClass {
     public  static void main(String[] args)
     {
         // Création d'un animal (lion) et attribution de valeurs aux attributs
-        Animal lion=new Animal();
-        lion.family = "Félin";
-        lion.name = "Lion";
-        lion.age = 5;
-        lion.isMammal = true;
+        Animal lion =new Animal();
+        lion.name="SYMBA";
+        lion.family="Carnivor";
+        lion.age=10;
+        lion.isMammal= true;
 
         // Création d'un zoo (myZoo) et attribution de valeurs aux attributs
-        Zoo myZoo = new Zoo();
-        myZoo.name = "Mon Zoo";
-        myZoo.city = "VilleZoo";
+  Zoo myZoo =new Zoo();
+        myZoo.animals=new Animal[25];
+        myZoo.name="Belvidere";
+        myZoo.city="Tunis";
+        myZoo.nbrCages=10;
+
+        myZoo.animals[0]=lion;
     }
 }
 ```
@@ -119,11 +123,23 @@ public class Zoo {
 
     }
 }
-public class Animal {
-    String family;
-    String name;
-    int age;
-    boolean isMammal;
+    public class Zoo {
+         Animal [] animals;
+         String name;
+         String city;
+         int nbrCages;
+    
+         public Zoo() {
+         }
+    
+         public Zoo(String name, String city, int nbrCages) {
+              animals = new Animal[nbrCages];
+              this.name = name;
+              this.city = city;
+              this.nbrCages = nbrCages;
+         }
+    }    
+
     public Animal(String family, String name, int age, boolean isMammal) {
         this.family = family;
         this.name = name;
@@ -149,7 +165,7 @@ public class Zoo {
     String city;
     final int NB_CAGES = 25;
 
-    public Zoo() {}
+    public Zoo() {} // constructeur non paramétré
     public Zoo(String name, String city) {
         animals = new Animal[NB_CAGES];
         this.name = name;
@@ -162,7 +178,7 @@ public class Animal {
     String name;
     int age;
     boolean isMammal;
-    public Animal() {}
+    public Animal() {} // constructeur non paramétré
     public Animal(String family, String name, int age, boolean isMammal) {
         this.family = family;
         this.name = name;
@@ -180,6 +196,7 @@ public class MainClass {
         Animal chat = new Animal("Carnivore","Chat",2,true);
         Animal elephant = new Animal("Elephant", "Elephant", 10, true);
         Animal giraffe = new Animal("Giraffidae", "Giraffe", 8, true);
+
     }
 }
 ```
@@ -188,10 +205,10 @@ public class MainClass {
 Création de la méthode “displayZoo ()” dans la classe Zoo et son invocation dans la méthode “main” pour le zoo que vous avez créé.
 Classe Zoo :
 ```
-public void displayZoo()
-{
-    System.out.println("Zoo: " + name + ", cité: " + city+", nombre de cages: "+nbrCages);
-}
+     public void displayZoo()
+     {
+          System.out.println("nom de zoo: "+name+", city: "+city+", nombre de cages: "+nbrCages);
+     }
 ```
 Classe Principale :
 ```

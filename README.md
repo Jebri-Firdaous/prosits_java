@@ -494,6 +494,8 @@ public class Zoo {
 ```
 ## Instruction 15:
 ```
+public class Zoo {
+    …
      public boolean isZooFull()
      {
           if (nbAnimaux==nbrCages)
@@ -504,8 +506,50 @@ public class Zoo {
           else {
                return false;
           }
-
      }
+    …
+}
+```
+## Instruction 16:
+```
+public class Zoo {
+    …
+    static Zoo  comparerZoo(Zoo z1, Zoo z2){
+          if (z1.nbAnimaux <z2.nbAnimaux) {
+               return z2;
+          }
+          else {
+               return z1;
+          }
+     }
+    …
+}
+import java.util.Scanner;
+
+public class ZooManagement {
+    public  static void main(String[] args)
+    {
+        Zoo myZoo =new Zoo("Belvidere","Tunis");
+        Animal lion =new Animal("Carnivor", "Symba",10,true);
+        Animal lion1 =new Animal("Carnivor", "Symba",10,true);
+        Animal chat = new Animal("Carnivore","Tom",2,true);
+        Animal elephant = new Animal("Herbivor", "Babar", 10, true);
+        Animal giraffe = new Animal("Herbivore", "Melman", 8, true);
+         …
+        myZoo.addAnimal(lion);
+        myZoo.addAnimal(giraffe);
+        myZoo.addAnimal(elephant);
+         …
+        Zoo z2=new Zoo("Friguia","Tunis");
+        z2.addAnimal(lion);
+        z2.addAnimal(chat);
+         …
+        Zoo grd = Zoo.comparerZoo(myZoo, z2);
+        System.out.println(" le Zoo avec le plus d'animaux: "+grd.name );
+    }
+    }
+
+
 ```
 
 

@@ -490,6 +490,28 @@ public class Zoo {
           this.city = city;
      }
     …
+    // Utilisez nbAnimaux au lieu de nbrCages
+     public void afficheAnimalZoo(){
+          for (int i=0; i<nbAnimaux;i++)
+          {
+               if(animals[i]!=null)
+               {
+                    System.out.println("animal["+i+"]=Family: "+animals[i].getFamily()+" ,name:"+animals[i].getName()
+                    +",age:"+animals[i].getAge()+" ,isMammal:"+animals[i].isMammal());
+               }
+          }
+     }
+
+     public int searchAnimal(Animal animal)
+     {
+          for (int i=0;i< nbAnimaux;i++) {
+               if (animals[i]!=null && animals[i].getName()==animal.getName()) {
+                    return i;
+               }
+          }
+          return -1;
+     }
+…
 }
 ```
 ## Instruction 15:
@@ -511,6 +533,7 @@ public class Zoo {
 }
 ```
 ## Instruction 16:
+Classe Zoo
 ```
 public class Zoo {
     …
@@ -524,7 +547,9 @@ public class Zoo {
      }
     …
 }
-
+```
+Classe Principale
+```
 public class ZooManagement {
     public  static void main(String[] args)
     {
@@ -574,4 +599,154 @@ public class Zoo {
     …
 }
 ```
+## Instruction 18:
+Classe Zoo
+```
+
+public class Zoo {
+     private Animal [] animals;
+     private String name;
+     private String city;
+     private static final int nbrCages=25;
+     private int nbAnimaux=0;
+
+     public Zoo() {
+     }
+
+     public Zoo(String name, String city) {
+          animals = new Animal[nbrCages];
+          setName(name);
+          this.city = city;
+     }
+
+     public Animal[] getAnimals() {
+          return animals;
+     }
+
+     public String getName() {
+          return name;
+     }
+
+     public String getCity() {
+          return city;
+     }
+     public int getNbAnimaux() {
+          return nbAnimaux;
+     }
+
+     public void setAnimals(Animal[] animals) {
+          this.animals = animals;
+     }
+
+     public void setName(String name) {
+          if (!name.isEmpty()) {
+               this.name = name;
+          } else {
+               System.out.println("Le nom du zoo ne peut pas être vide.");
+          }
+     }
+
+     public void setCity(String city) {
+          this.city = city;
+     }
+
+     public void setNbAnimaux(int nbAnimaux) {
+          this.nbAnimaux = nbAnimaux;
+     }
+
+
+
+ …
+     public void afficheAnimalZoo(){
+          for (int i=0; i<nbAnimaux;i++) 
+          {
+               if(animals[i]!=null)
+               {
+                    System.out.println("animal["+i+"]=Family: "+animals[i].getFamily()+" ,name:"+animals[i].getName()+
+                    ",age:"+animals[i].getAge()+" ,isMammal:"+animals[i].isMammal());
+               }
+          }
+     }
+     public int searchAnimal(Animal animal)
+     {
+          for (int i=0;i< nbAnimaux;i++) 
+         {
+               if (animals[i]!=null && animals[i].getName()==animal.getName()) {
+                    return i;
+               }
+          }
+          return -1;
+     }
+      …
+}
+
+```
+Classe Animal
+```
+public class Animal {
+    private String family;
+    private String name;
+    private int age;
+    private boolean isMammal;
+
+    public Animal() {
+    }
+
+    public Animal(String family, String name, int age, boolean
+            isMammal) {
+        this.family = family;
+        setName(name);
+        setAge(age);
+        this.isMammal = isMammal;
+    }
+
+    public String getFamily() {
+        return family;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public boolean isMammal() {
+        return isMammal;
+    }
+
+    public void setFamily(String family) {
+        this.family = family;
+    }
+
+    public void setName(String name) {
+        if (!name.isEmpty()) {
+            this.name = name;
+        } else {
+            System.out.println("Le nom de l'animal ne peut pas être vide.");
+        }
+    }
+
+    public void setAge(int age) {
+        if (age>=0)
+        {
+            this.age=age;
+        }
+        else {
+            System.out.println("L'âge ne peut pas être négatif.");
+        }
+    }
+
+    public void setMammal(boolean mammal) {
+        isMammal = mammal;
+    }
+
+    @Override
+    public String toString() {
+        return "Family:"+family+" ,name:"+name+", age:"+age+", isMammal:"+isMammal;
+    }
+}
+```
+
 

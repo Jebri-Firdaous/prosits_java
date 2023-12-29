@@ -85,7 +85,7 @@ public class Animal {
 ```
 Classe Principale :
 ```
-public class MainClass {
+public class ZooManagement{
     public  static void main(String[] args)
     {
         // Création d'un animal (lion) et attribution de valeurs aux attributs
@@ -188,7 +188,7 @@ public class Animal {
 ```
 Créez des animaux avec le constructeur paramétré.
 ```
-public class MainClass {
+public class ZooManagement{
     public  static void main(String[] args)
     {
         Zoo myZoo = new Zoo("Belvidere", "Tunis",6);
@@ -211,7 +211,7 @@ Classe Zoo :
 ```
 Classe Principale :
 ```
-public class MainClass {
+public class ZooManagement{
     public  static void main(String[] args)
     {
         …
@@ -224,7 +224,7 @@ public class MainClass {
 
 Essayez de directement afficher le zoo via ces deux instructions :
 ```
-public class MainClass {
+public class ZooManagement{
     public  static void main(String[] args)
     {
         …
@@ -289,7 +289,7 @@ public class Zoo {
 ```
 Classe Principale
 ```
-public class MainClass {
+public class ZooManagement{
     public  static void main(String[] args)
     {
         …
@@ -325,7 +325,7 @@ public void displayAnimalZoo(){
 ```
 Classe principale.
 ```
-public class MainClass {
+public class ZooManagement{
     public  static void main(String[] args)
     {
         …
@@ -358,7 +358,7 @@ public class Zoo {
     }
 }
 
-public class MainClass {
+public class ZooManagement{
     public  static void main(String[] args)
     {Zoo myZoo =new Zoo("Belvidere","Tunis",8);
         Animal lion =new Animal("Carnivor", "Symba",10,true);
@@ -379,7 +379,7 @@ public class MainClass {
  ```
 
 ```
-public class MainClass {
+public class ZooManagement{
     public  static void main(String[] args)
     {
         …
@@ -748,5 +748,36 @@ public class Animal {
     }
 }
 ```
+## Instruction 20:
+Classe Aquatic
+```
+package tn.esprit.gestionzoo.entities;
 
+public class Aquatic extends Animal{
+    private String habitat;
+}
+```
+Classe Terrestrial
+```
+package tn.esprit.gestionzoo.entities;
 
+public class Terrestrial extends Animal {
+    private int nbrLegs;
+}
+```
+Classe Dolphin
+```
+package tn.esprit.gestionzoo.entities;
+public class Dolphin extends Aquatic{
+    private float swimmingSpeed;
+}
+
+```
+Classe Penguin
+```
+package tn.esprit.gestionzoo.entities;
+
+public class Penguin extends Aquatic{
+    private float swimmingDepth;
+}
+```

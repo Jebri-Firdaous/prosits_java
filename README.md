@@ -476,8 +476,37 @@ public  boolean removeAnimal(Animal animal)
           return false;
      }
 ``` 
+# PROSIT 3
 
+## Instruction 14:
+```
+public class Zoo {
+    …
+    static final int nbrCages=25;
+    … 
+    public Zoo(String name, String city) {
+          animals = new Animal[nbrCages];
+          this.name = name;
+          this.city = city;
+     }
+    …
+}
+```
+## Instruction 15:
+```
+     public boolean isZooFull()
+     {
+          if (nbAnimaux==nbrCages)
+          {
+               System.out.println("le zoo est plein.");
+               return true;
+          }
+          else {
+               return false;
+          }
 
+     }
+```
 
 
 

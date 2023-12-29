@@ -524,7 +524,6 @@ public class Zoo {
      }
     …
 }
-import java.util.Scanner;
 
 public class ZooManagement {
     public  static void main(String[] args)
@@ -551,6 +550,28 @@ public class ZooManagement {
 
 
 ```
+## Instruction 17:
 
-
+```
+public class Zoo {
+    …
+     public boolean addAnimal(Animal animal) {
+          if (isZooFull()) {
+               System.out.println("Le zoo est plein. Impossible d'ajouter plus d'animaux.");
+               return false;
+          }
+          else if (searchAnimal(animal) == -1) {
+                    animals[nbAnimaux] = animal;
+                    nbAnimaux++;
+                    System.out.println("Inseré");
+                    return true;
+               }
+               else {
+                         System.out.println("Animal existe déjà");
+                              return false;
+                    }
+     }
+    …
+}
+```
 
